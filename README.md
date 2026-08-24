@@ -8,16 +8,19 @@ CloakBrowser is a Chromium-based multi-accounting tool that lets you run many in
 
 ## Contents
 
-| File | Size | Description |
+| Path | Size | Description |
 |---|---|---|
-| `cloakbrowser-pro-v151-free.zip` | 224 MB (779 MB unzipped) | Full browser package |
+| `cloakbrowser-pro-v151-free/` | 760 MB | Full extracted browser package |
 | `README.md` | — | This file |
+
+The `.zip` file is still present but not tracked in git — it's kept as a convenient download.
 
 ## Quick start
 
 ```bash
-# 1. Extract
-unzip cloakbrowser-pro-v151-free.zip
+# 1. Clone (files are already extracted)
+git clone https://github.com/DeCloaked/DeCloakedBrowser.git
+cd DeCloakedBrowser
 
 # 2. Launch the browser
 ./cloakbrowser-pro-v151-free/chrome
@@ -45,7 +48,7 @@ Because this is a cracked Pro build, you can run **any number of concurrent sess
 
 ```bash
 # Session A
-./chrome --user-data-dir=./session-a --remote-debugging-port=9222
+./cloakbrowser-pro-v151-free/chrome --user-data-dir=./session-a --remote-debugging-port=9222
 
 # Session B (in another terminal)
 ./chrome --user-data-dir=./session-b --remote-debugging-port=9223
@@ -61,11 +64,11 @@ Each session has its own:
 
 ## Linux
 
-The zip contains a Linux-compatible `chrome` binary along with all required `.so` shared libraries (libGLESv2, libvulkan, etc.). Works on most modern Linux distros.
+The extracted `chrome` binary is Linux-compatible (linux-x64) with all required `.so` shared libraries (libGLESv2, libvulkan, etc.) included. Works on most modern Linux distros without additional dependencies.
 
 ## File structure
 
-Inside the zip:
+Extracted directory layout:
 
 ```
 cloakbrowser-pro-v151-free/
@@ -86,7 +89,7 @@ cloakbrowser-pro-v151-free/
 
 ## Repository
 
-This repo is kept minimal. The browser package is tracked with **Git LFS** to keep history lean. Run `git lfs pull` to ensure you have the latest blob.
+This repo tracks 671 files directly — **Git LFS** handles the heavy binaries (chrome, chromedriver, shared libraries) to keep history lean. Clone includes everything via LFS.
 
 ## License
 
